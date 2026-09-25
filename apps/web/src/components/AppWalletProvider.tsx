@@ -13,8 +13,8 @@ export default function AppWalletProvider({
   children: React.ReactNode;
 }) {
   const network = 'mainnet-beta';
-  // You can also provide a custom RPC endpoint
-  const endpoint = useMemo(() => clusterApiUrl(network), [network]);
+  // Use Helius RPC if available, otherwise fallback to public
+  const endpoint = useMemo(() => process.env.NEXT_PUBLIC_SOLANA_RPC_URL || clusterApiUrl(network), [network]);
   
   const wallets = useMemo(
     () => [

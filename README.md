@@ -31,9 +31,19 @@ By keeping the private key on the client and delegating only allowance to the ba
 
 *(Note: Pre-IPO tokens, Perps, and Yield features are explicitly excluded from this build to focus on the core xStocks agent experience).*
 
+Celxor is a night desk for tokenized stocks on Solana.
+
+Tokenized equities trade 24/7. The cash equity does not. Nobody watches the overnight spread. Handing a bot your keys is a trust problem, not a trading problem.
+
+So the permission is the product. You sign one on-chain grant — a daily cap, a duration, and a set of allowed xStocks. The agent trades inside that permission, reading Pyth for off-hours marks and Jupiter for liquidity. Every action is auditable. Every refusal is explained in plain language. One tap revokes everything on-chain, even if our server is down.
+
+Non-custodial. Your wallet, your keys, your control.
+
 ## Development
 To run locally:
 \`\`\`bash
 npm run dev:web
 npm run dev:server
 \`\`\`
+
+Built for the Stocklana hackathon on Solana. Uses Token-2022 Scaled UI, SPL ApproveChecked / Revoke, Jupiter v6, and Pyth Equity.US.* price feeds.
